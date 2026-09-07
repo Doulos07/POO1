@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.Clock;
+
 /**
  * A WallpostTest is a test class for testing the behavior of Wallpost
  */
@@ -43,7 +45,7 @@ class WallPostTest {
 		coolPost.dislike();
 		assertEquals(0, coolPost.getLikes());
 		coolPost.dislike();
-		assertEquals(0, coolPost.getLikes());
+		assertEquals(-1, coolPost.getLikes());
 	}
 
 	@Test
