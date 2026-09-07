@@ -1,0 +1,6 @@
+# Ignorar compilados de Maven
+target/
+
+# Ignorar configuraciones de IntelliJ
+.idea/
+*.iml
