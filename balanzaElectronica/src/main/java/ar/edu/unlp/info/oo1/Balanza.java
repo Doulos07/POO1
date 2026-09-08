@@ -13,11 +13,26 @@ public class Balanza {
         this.pesoTotal = 0;
     }
 
-    public void agregarProductos(Producto producto){
-
+    public void agregarProducto(Producto producto){
+        this.cantidadDeProductos += 1;
+        this.precioTotal += producto.getPrecio() * producto.getPeso();
+        this.pesoTotal += producto.getPeso();
     }
 
+
     public Ticket emitirTicket(){
-        return null;
+        return new Ticket(this.cantidadDeProductos, this.pesoTotal, this.precioTotal);
+    }
+
+    public double getPesoTotal(){
+        return this.pesoTotal;
+    }
+
+    public double getPrecioTotal(){
+        return this.precioTotal;
+    }
+
+    public int getCantidadDeProductos(){
+        return this.cantidadDeProductos;
     }
 }
