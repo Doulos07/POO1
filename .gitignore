@@ -1,6 +1,11 @@
 # Ignorar compilados de Maven
 target/
 
-# Ignorar configuraciones de IntelliJ
+# Archivos de Eclipse
+.classpath
+.project
+.settings/
+
+# Archivos de IntelliJ IDEA
 .idea/
 *.iml
