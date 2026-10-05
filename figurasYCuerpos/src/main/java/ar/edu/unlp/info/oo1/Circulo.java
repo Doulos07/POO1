@@ -3,6 +3,8 @@ package ar.edu.unlp.info.oo1;
 public class Circulo implements Figura {
     private double radio;
 
+    public Circulo(){}
+
     public Circulo(double radio) {
         this.radio = radio;
     }
@@ -14,7 +16,7 @@ public class Circulo implements Figura {
     public double getRadio() {
         return radio;
     }
-    
+
     public void setDiametro(double diametro) {
         this.radio = diametro / 2;
     }

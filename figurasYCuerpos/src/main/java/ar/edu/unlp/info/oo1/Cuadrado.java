@@ -4,6 +4,8 @@ public class Cuadrado implements Figura{
 
     private double lado;
 
+    public Cuadrado () {}
+
     public Cuadrado (double lado){
         this.lado = lado;
     }
