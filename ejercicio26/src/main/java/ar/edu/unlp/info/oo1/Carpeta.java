@@ -1,8 +1,6 @@
 package ar.edu.unlp.info.oo1;
 
 import java.util.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Carpeta {
 
@@ -40,7 +38,7 @@ public class Carpeta {
                 findFirst().orElse(null);
     }
 
-    public int filtrarEmailCategoria (int inicio, int fin){
+    private int filtrarEmailCategoria (int inicio, int fin){
         return (int) this.emails.stream().filter(email -> inicio <= email.getTamaño() && email.getTamaño() <= fin).count();
     }
 
@@ -48,12 +46,12 @@ public class Carpeta {
         return this.emails.size();
     }
 
-    public Map<String, Integer> categoriaMails (){
+    public Map<String, Integer> cantidadMailsPorCategoria (){
         Map<String, Integer> categorias = new HashMap<>();
 
-        categorias.put("small", this.filtrarEmailCategoria(0, 300));
-        categorias.put("medium", this.filtrarEmailCategoria(301, 500));
-        categorias.put("big", this.filtrarEmailCategoria(501, Integer.MAX_VALUE));
+        categorias.put("Pequeño", this.filtrarEmailCategoria(0, 300));
+        categorias.put("Mediano", this.filtrarEmailCategoria(301, 500));
+        categorias.put("Grande", this.filtrarEmailCategoria(501, Integer.MAX_VALUE));
 
         return  categorias;
     }
@@ -71,6 +69,10 @@ public class Carpeta {
                 bagEmail.put(email.getFecha(), count + 1);
             }
         }
+
+        bagEmail.entrySet().forEach(entry -> {
+            reporte.add(entry.getKey() + "-" + entry.getValue() + "emails");
+        });
 
         return reporte;
     }

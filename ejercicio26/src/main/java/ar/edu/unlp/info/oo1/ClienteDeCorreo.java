@@ -14,15 +14,9 @@ public class ClienteDeCorreo {
         this.carpetas.add(this.inbox);
     }
 
-    public Carpeta getInbox() {
-        return this.getInbox();
-    }
-
-
     public void recibir (Email email){
         this.inbox.agregarEmail(email);
     }
-
 
     public Email buscar (String texto){
         return this.carpetas.stream().
@@ -48,5 +42,7 @@ public class ClienteDeCorreo {
         return this.carpetas.stream().mapToInt(Carpeta::cantidadMails).sum();
     }
 
-
+    public List<Carpeta> getCarpetas (){
+        return  this.carpetas;
+    }
 }

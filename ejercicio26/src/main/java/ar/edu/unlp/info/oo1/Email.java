@@ -19,12 +19,6 @@ public class Email {
         this.archivos = new ArrayList<Archivo>();
     }
 
-    public Email(String titulo, String cuerpo,  List<Archivo> archivos){
-        this.titulo = titulo;
-        this.cuerpo = cuerpo;
-        this.archivos = archivos;
-    }
-
     public String getTitulo() {
         return this.titulo;
     }
