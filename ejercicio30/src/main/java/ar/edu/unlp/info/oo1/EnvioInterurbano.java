@@ -19,7 +19,7 @@ public class EnvioInterurbano extends Envio{
     private double calcularPrecioEnvio() {
         if (distancia < 100) {
             return 20;
-        } else if (200 <= distancia && distancia <= 500) {
+        } else if (100 <= distancia && distancia <= 500) {
             return 25;
         } else {
             return 30;
