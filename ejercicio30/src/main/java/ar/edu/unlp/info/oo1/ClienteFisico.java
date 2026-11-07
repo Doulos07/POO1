@@ -13,7 +13,7 @@ public class ClienteFisico extends Cliente {
     }
 
     @Override
-    public double montoPagar(LocalDate from, LocalDate to){
-        return super.montoPagar(from,to) % 0.90;
+    public double montoPagar(LocalDate from, LocalDate to) {
+        return super.montoPagar(from, to) * 0.90;
     }
 }
