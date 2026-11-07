@@ -20,7 +20,10 @@ abstract public class Cliente {
     }
 
     public double montoPagar(LocalDate from, LocalDate to) {
-        return envios.stream().mapToDouble(Envio::montoEnvio).sum();
+        return envios.stream()
+                .filter(envio -> envio.entreRangoFecha(from, to))
+                .mapToDouble(Envio::montoEnvio)
+                .sum();
     }
 
 }
