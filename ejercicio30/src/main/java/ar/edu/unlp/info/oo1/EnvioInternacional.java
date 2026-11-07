@@ -14,7 +14,7 @@ public class EnvioInternacional extends Envio{
 
     @Override
     public double montoEnvio() {
-        return 5000 + ((this.getPeso() < 1000) ? 10 * this.getPeso() : 12 * this.getPeso()) + ((this.entregaRapida) ? 800 : 0);
+        return 5000 + ((this.getPeso() <= 1000) ? 10 * this.getPeso() : 12 * this.getPeso()) + ((this.entregaRapida) ? 800 : 0);
     }
 
 }
